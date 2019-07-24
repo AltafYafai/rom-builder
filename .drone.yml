@@ -3,7 +3,7 @@ name: Build Bot
 
 steps:
 - name: ROM
-  image: baalajimaestro/android_build:latest
+  image: flagersgit/android-build-docker:latest
   environment:
     TELEGRAM_TOKEN:
       from_secret: TELEGRAM_TOKEN
