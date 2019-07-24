@@ -1,4 +1,4 @@
-![Build Status](https://cloud.drone.io/api/badges/JarlPenguin/releases/status.svg)
+![Build Status](https://cloud.drone.io/api/badges/flagersgit/rom-builder/status.svg)
 
 # ROM BUILDER
 #

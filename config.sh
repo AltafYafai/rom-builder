@@ -1,18 +1,18 @@
 #!/bin/bash
 
-GITHUB_USER=JarlPenguin
-GITHUB_EMAIL=jarlpenguin@gmail.com
+GITHUB_USER=flagersgit
+GITHUB_EMAIL=flagersmail@gmail.com
 
-KBUILD_BUILD_USER="JarlPenguin"
-KBUILD_BUILD_HOST="builder"
+KBUILD_BUILD_USER="flagersgit"
+KBUILD_BUILD_HOST="bob"
 
-device=montana
+export device=perry
 
-ROM="CarbonROM"
-manifest_url="https://github.com/CarbonROM/android"
-rom_vendor_name="carbon" # This represent the nams used by different rom vendors, Ex - aosp_harpia-userdebug, aosp is vendor name.
-branch="cr-7.0"
+ROM="LineageOS"
+manifest_url="https://github.com/LineageOS/android"
+export rom_vendor_name="lineage" # This represent the nams used by different rom vendors, Ex - aosp_harpia-userdebug, aosp is vendor name.
+branch="lineage-15.1"
 
-release_repo="JarlPenguin/releases"
+release_repo="flagersgit/build_output"
 
-timezone="Seoul"
+timezone="America/New_York"

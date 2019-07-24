@@ -63,7 +63,7 @@ Build Started: [See Progress]("$ci_url")"
     . build/envsetup.sh > /dev/null 2>&1
     source /drone/src/config.sh
     lunch "$rom_vendor_name"_"$device"-userdebug > /dev/null 2>&1
-    mka carbon | grep $device
+    mka bacon | grep $device
     BUILD_END=$(date +"%s")
     BUILD_DIFF=$((BUILD_END - BUILD_START))
 
