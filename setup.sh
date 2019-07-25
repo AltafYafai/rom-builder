@@ -16,11 +16,10 @@ useradd -m -d /home/ci ci
 useradd -g ci wheel
 sudo cp github-release /usr/bin
 sudo cp telegram /usr/bin
-sudo apt search openjdk
-sudo apt install openjdk-8-jdk
-sudo update-alternatives –config java
-java -version
-echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/" >> /etc/environment
-source /etc/environment
-echo $JAVA_HOME
+sudo apt-get update
+sudo curl -sL -o/var/cache/apt/archives/openjdk-8-jdk_8u45-b14-1_amd64.deb http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u45-b14-1_amd64.deb
+sudo dpkg -i /var/cache/apt/archives/openjdk-8-jdk_8u45-b14-1_amd64.deb
+sudo apt-get -f install
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
 sudo -Hu ci bash -c "bash build.sh"
