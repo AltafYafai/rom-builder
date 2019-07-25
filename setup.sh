@@ -16,14 +16,11 @@ useradd -m -d /home/ci ci
 useradd -g ci wheel
 sudo cp github-release /usr/bin
 sudo cp telegram /usr/bin
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt update
-echo debconf shared/accepted-oracle-license-v1-1 select true | \
-sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | \
-sudo debconf-set-selections
-sudo apt install oracle-java8-installer
-sudo apt install oracle-java8-set-default
-javac -version
-echo "$PATH"
+sudo apt search openjdk
+sudo apt install openjdk-8-jdk
+sudo update-alternatives –config java
+java -version
+echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/" >> /etc/environment
+source /etc/environment
+echo $JAVA_HOME
 sudo -Hu ci bash -c "bash build.sh"
