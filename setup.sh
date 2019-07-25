@@ -17,3 +17,5 @@ useradd -g ci wheel
 sudo cp github-release /usr/bin
 sudo cp telegram /usr/bin
 sudo -Hu ci bash -c "bash build.sh"
+sudo apt-get install openjdk-8-jdk
+sudo update-alternatives --config java
