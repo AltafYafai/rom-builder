@@ -16,10 +16,12 @@ useradd -m -d /home/ci ci
 useradd -g ci wheel
 sudo cp github-release /usr/bin
 sudo cp telegram /usr/bin
-sudo apt-get update
-sudo curl -sL -o/var/cache/apt/archives/openjdk-8-jdk_8u45-b14-1_amd64.deb http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u45-b14-1_amd64.deb
-sudo dpkg -i /var/cache/apt/archives/openjdk-8-jdk_8u45-b14-1_amd64.deb
-sudo apt-get -f install
-sudo update-alternatives --config java
-sudo update-alternatives --config javac
+DEBIAN_FRONTEND=noninteractive sudo apt-get update
+DEBIAN_FRONTEND=noninteractive sudo curl -sL -o/var/cache/apt/archives/openjdk-8-jre_8u45-b14-1_amd64.deb http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre_8u45-b14-1_amd64.deb
+DEBIAN_FRONTEND=noninteractive sudo dpkg -i /var/cache/apt/archives/openjdk-8-jre_8u45-b14-1_amd64.deb
+DEBIAN_FRONTEND=noninteractive sudo curl -sL -o/var/cache/apt/archives/openjdk-8-jdk_8u45-b14-1_amd64.deb http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u45-b14-1_amd64.deb
+DEBIAN_FRONTEND=noninteractive sudo dpkg -i /var/cache/apt/archives/openjdk-8-jdk_8u45-b14-1_amd64.deb
+DEBIAN_FRONTEND=noninteractive sudo apt-get -f install
+DEBIAN_FRONTEND=noninteractive sudo update-alternatives --config java
+DEBIAN_FRONTEND=noninteractive sudo update-alternatives --config javac
 sudo -Hu ci bash -c "bash build.sh"
