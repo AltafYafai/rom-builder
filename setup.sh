@@ -18,4 +18,5 @@ sudo cp github-release /usr/bin
 sudo cp telegram /usr/bin
 sudo apt-get install openjdk-8-jdk
 sudo update-alternatives --config java
+echo "$PATH"
 sudo -Hu ci bash -c "bash build.sh"
